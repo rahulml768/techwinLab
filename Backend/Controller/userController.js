@@ -8,7 +8,6 @@ export const registerUser = async (req, res, next) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ error: errors.array() });
     }
-
     try {
         const { name, email, phone, image, password, role } = req.body;
 
