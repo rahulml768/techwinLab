@@ -6,4 +6,4 @@ export const driverRou = express.Router();
 
 
 driverRou.get("/",authentication,fectchJobs);
-driverRou.post("/apply",authentication,applyJobs);
+driverRou.post("/apply/:id",authentication,applyJobs);

@@ -9,7 +9,7 @@ export const fectchJobs = async(req,res,next)=>{
       }
       const jobs = await CustomerModel.find({
         status:"pending"
-      }).populate("name","email","phone");
+      }).populate("name email phone");
       if(!jobs){
         return res.status(404).json({message:"no jobs are available"})
       }
@@ -29,7 +29,7 @@ try{
         return res.status(403).json({message:"only driver cans apply job"})
       }
       const jobid = req.params.id || req.user.job_id
-      const job = CustomerModel.findById(jobid)
+      const job = await CustomerModel.findById(jobid)
       if(!job){
         return res.status(404).json({message:"no jobs are there for thi id"})
       }

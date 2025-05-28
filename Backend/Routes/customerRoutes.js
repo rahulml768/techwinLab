@@ -20,6 +20,6 @@ custRoutes.put("/:id",[
     body("dropoff").isString().withMessage("should be string")
 ],authentication,updateJobs);
 
-custRoutes.put("/assign:id",authentication,assignDriver)
+custRoutes.put("/assign/:id",authentication,assignDriver)
 
 
